@@ -19,13 +19,13 @@ funky = "ファンキ～～～～～～～～～～～～"
 
 message = ""
 
-tokenObj = open(setting_file) do |json_data|
-   JSON.load(json_data)
-end
-
 unless File.exist?(setting_file)
   mkconfig = current_path + '/make-config.rb'
   system mkconfig
+end
+
+tokenObj = open(setting_file) do |json_data|
+  JSON.load(json_data)
 end
 
 def get_rokuyou(uri)
